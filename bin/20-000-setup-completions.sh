@@ -62,7 +62,7 @@ openspec completion generate bash | sudo tee /etc/bash_completion.d/$completion_
 
 prefix=$(printf "5%02d" ${j})
 completion_file=${prefix}-nvm
-echo "source /home/nveces/.nvm/bash_completion" | sudo tee /etc/bash_completion.d/$completion_file > /dev/null
+echo "source ~/.nvm/bash_completion" | sudo tee /etc/bash_completion.d/$completion_file > /dev/null
 ((j++))
 
 

@@ -87,7 +87,3 @@ vault version
 exit 0
 
 # EOF
-
-
-#!/bin/bash
-# Script para instalar Vault CLI en Linux

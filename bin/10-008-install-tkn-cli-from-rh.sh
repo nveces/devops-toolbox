@@ -52,7 +52,7 @@ TKN_VERSION="1.18.0"
 TKN_CLI_NAME="tkn-${OS_ARCH}-amd64.tar.gz"
 TKN_CLI_URL="https://mirror.openshift.com/pub/openshift-v4/clients/pipelines/${TKN_VERSION}/${TKN_CLI_NAME}"
 TKN_CLI_FILE=$WORKDIR/${TKN_CLI_NAME}
-TKN_CLI_HOME=$WORKDIR/tkn-cli-${ARGOCD_VERSION}
+TKN_CLI_HOME=$WORKDIR/tkn-cli-${TKN_VERSION}
 mkdir -p ${WORKDIR}
 mkdir -p ${TKN_CLI_HOME}
 
@@ -76,7 +76,7 @@ for cmd in "${COMMANDS[@]}"; do
   TOOL_CLI_LOCAL=/usr/local/bin/${cmd}
   TOOL_CLI=${TKN_CLI_HOME}/${cmd}
   create_sym_link ${TOOL_CLI} ${TOOL_CLI_LOCAL}
-  ${cmd} version --request-timeout=5s
+  ${cmd} version
 done
 
 msg "Successfull"
